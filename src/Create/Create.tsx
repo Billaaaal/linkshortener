@@ -160,6 +160,8 @@ function App() {
     <div className="main_head">
       <span id="main_title" style={{color:"#071160"}}>Your shortened link :</span>
       <QRCodeCanvas id="qr_code_image"value={shortenedLink} style={{width:'45%', height:'45%'}} bgColor={qrCodeBg} onClick={saveQrCode}/>
+      <span id="main_title" style={{color:"#071160"}}>{shortenedLink}</span>
+
       
     </div>
 

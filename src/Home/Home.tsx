@@ -49,8 +49,14 @@ function App() {
       
 
       //location.state.claimedLink.toLowerCase()
-    }else{
+    }else if(linkToShorten === ""){
       alert("Please enter a valid link")
+    }
+    else{
+      navigate("/create", { state: { link: "http://"+ linkToShorten, id:generateId(7) } });
+
+
+
     }
 
     //var id = generateId(7);
@@ -109,7 +115,7 @@ function App() {
       <div className="form_elements">
         <div id="form_div">
           
-          <input id="link_input" type="text" placeholder="Paste a link and shorten it" onChange={event => setLinkToShorten("http://"+event.target.value.toLowerCase())} >
+          <input id="link_input" type="text" placeholder="Paste a link and shorten it" onChange={event => setLinkToShorten(event.target.value)} >
 
           </input>
           <button id="button" type="button" onClick={shorten}>Shorten</button>

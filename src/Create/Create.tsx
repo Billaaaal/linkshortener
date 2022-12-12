@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { BrowserRouter as Router, Routes , Route, Link, BrowserRouter, useLocation, useNavigate } from "react-router-dom";
 import './Create.css';
 import ReactDOM from 'react-dom';
@@ -40,6 +40,21 @@ function App() {
   const [qrCodeImage, setQrCodeImage] = useState("");
   const [qrCodeBg, setQrCodeBg] = useState("transparent");
 
+  let navigate = useNavigate();
+  let location = useLocation();
+
+
+  
+  if  (location.state){
+
+  }else{
+    window.location.href = "http://127.0.1:3000/";
+    //window.location.href = "http://linkshortener.netlify.app/";
+
+
+    return (null)
+  }
+
 
   const app = initializeApp(firebaseConfig);
   
@@ -58,22 +73,20 @@ function App() {
 
   
 
-  let navigate = useNavigate();
 
-  var location = useLocation();
 
-  if (location.state == null) {
-    navigate("/");
-   return(null);
-   
-  }
+
+  
 
   var linkToSendToDatabase = location.state.link;
   
 
   var idToSendToDatabase = location.state.id;
 
-  const shortenedLink = "linkshortener.netlify.app/" + idToSendToDatabase
+  const shortenedLink = "192.168.31.104:3000/" + idToSendToDatabase
+
+
+
 
   var opts = {
     errorCorrectionLevel: 'H',
@@ -91,7 +104,7 @@ function App() {
 
   
 
-  QRCode.toDataURL(linkToSendToDatabase)
+  QRCode.toDataURL(shortenedLink)
   .then(url => {
     setQrCodeImage(url)
   })
@@ -107,7 +120,7 @@ function App() {
 
     canvas?.toBlob(
       function(blob:any) {
-    saveAs(blob, "qr_code.png"+linkToSendToDatabase);
+    saveAs(blob, "qr_code.png"+shortenedLink);
     });
 
     setQrCodeBg("transparent")
@@ -146,12 +159,8 @@ function App() {
 
     <div className="main_head">
       <span id="main_title" style={{color:"#071160"}}>Your shortened link :</span>
-      <QRCodeCanvas id="qr_code_image"value={linkToSendToDatabase} style={{width:'45%', height:'45%'}} bgColor={qrCodeBg} onClick={saveQrCode}/>
-      <button className="roundedButton" type='button'>{shortenedLink}
-                        <svg  className="linkSvg" xmlns="http://www.w3.org/2000/svg" viewBox="-10 -30 170 170">
-              <path d="M143.209,105.968c0,6.25-5.113,11.364-11.363,11.364H18.203c-6.25 0-11.363-5.113-11.363-11.364v-86.37c0-6.25,5.113-11.363 11.363-11.363h113.643c6.25,0,11.363,5.113,11.363,11.363V105.968z M18.203,17.326c-1.207,0-2.271,1.068-2.271,2.271v86.37c0,1.207,1.065 2.271,2.271,2.271h113.643c1.203,0,2.274-1.064 2.274-2.271v-86.37c0-1.203-1.071-2.271-2.274-2.271H18.203z M38.661,53.691c-7.529,0-13.641-6.108-13.641-13.635s6.112-13.638,13.641-13.638 c7.526,0,13.632,6.111,13.632,13.638S46.188,53.691,38.661,53.691z M125.025,99.15H25.02V85.51l22.73-22.724l11.363,11.36l36.365-36.361l29.547,29.547V99.15z"/>
-              </svg>
-      </button>
+      <QRCodeCanvas id="qr_code_image"value={shortenedLink} style={{width:'45%', height:'45%'}} bgColor={qrCodeBg} onClick={saveQrCode}/>
+      
     </div>
 
     

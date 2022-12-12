@@ -22,9 +22,9 @@ const firebaseConfig = {
 
 
 // Initialize Firebase
-//const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
-//const db = getDatabase();
+const db = getDatabase();
 
 
 
@@ -47,12 +47,12 @@ function App() {
 
   
   const dbRef = ref(getDatabase());
-  get(child(dbRef, `LinksDatabase/${useLocation().pathname.replace("/", "")}`)).then((snapshot) => {
+  get(child(dbRef, `ShortenedLinksDatabase/${useLocation().pathname.replace("/", "")}`)).then((snapshot) => {
     if (snapshot.exists()) {
       //console.log(snapshot.val());
       //alert(snapshot.val()["link"])
 
-      window.location.href=`https://${snapshot.val()["link"]}`;
+      window.location.href=`${snapshot.val()["link"]}`;
 
 
 
@@ -83,3 +83,4 @@ function App() {
 }
 
 export default App;
+

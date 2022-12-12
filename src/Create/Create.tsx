@@ -83,7 +83,7 @@ function App() {
 
   var idToSendToDatabase = location.state.id;
 
-  const shortenedLink = "192.168.31.104:3000/" + idToSendToDatabase
+  const shortenedLink = "localhost:3000/" + idToSendToDatabase
 
 
 

@@ -88,7 +88,7 @@ function App() {
 
   var idToSendToDatabase = location.state.id;
 
-  const shortenedLink = "localhost:3000/" + idToSendToDatabase
+  const shortenedLink = "linkshortenerapp.netlify.app/" + idToSendToDatabase
 
 
 

@@ -98,7 +98,7 @@ function App() {
         <img id ="logo" src="https://svgshare.com/i/nc7.svg"/>
         <div className="Login_button"><a className="Login_text">Features</a></div>
         <div className="Login_button"><a href="https://www.google.com" className="Login_text">Login</a></div>
-        <div className="Signup_button"><img id="signup_logo" src="https://i.ibb.co/5T9GvzB/Nice-Png-my-account-png-5010656.png"/><a className="Signup_text">Sign up</a></div>
+        <button className="Signup_button"><img id="signup_logo" src="https://i.ibb.co/5T9GvzB/Nice-Png-my-account-png-5010656.png"/><a className="Signup_text">Sign up</a></button>
         
 
 

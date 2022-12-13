@@ -164,7 +164,7 @@ function App() {
       <img id ="logo" src="https://svgshare.com/i/nc7.svg"/>
       <div className="Login_button"><a className="Login_text">Features</a></div>
       <div className="Login_button"><a href="https://www.google.com" className="Login_text">Login</a></div>
-      <div className="Signup_button"><img id="signup_logo" src="https://i.ibb.co/5T9GvzB/Nice-Png-my-account-png-5010656.png"/><a className="Signup_text">Sign up</a></div>
+      <button className="Signup_button"><img id="signup_logo" src="https://i.ibb.co/5T9GvzB/Nice-Png-my-account-png-5010656.png"/><a className="Signup_text">Sign up</a></button>
       
 
 
@@ -173,7 +173,7 @@ function App() {
     <div className="main_head">
       <p id="main_title" style={{color:"#071160"}}>Your shortened link :</p>
       <QRCodeCanvas id="qr_code_image"value={shortenedLink} style={{width:'45%', height:'45%'}} bgColor={qrCodeBg} onClick={saveQrCode}/>
-      <div id="link_container" style={{color:"#071160"}}><p id="link">{shortenedLink}</p><button id="copy_button" type="button" style={{backgroundColor:copyButtonColour}} onClick={copyToClipboard}>{copyButtonText}</button></div>
+      <div id="link_container" style={{color:"#071160"}}><p id="link">{"linkshortener.app/"+ idToSendToDatabase}</p><button id="copy_button" type="button" style={{backgroundColor:copyButtonColour}} onClick={copyToClipboard}>{copyButtonText}</button></div>
       <button id="button" type="button" onClick={()=>navigate("/")}>New link</button>
 
       

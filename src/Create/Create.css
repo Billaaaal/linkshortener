@@ -50,30 +50,8 @@ html, body, #root, .createBody {
   margin-left: 20px;
 }
 
-.createBody #signup_logo{
- height: 12.5px;
-  justify-self: flex-start;
-  display: block;
-  padding: 0 8px;
-  margin-right: auto;
-  filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(222deg) brightness(99%) contrast(102%);
-
-}
 
 
-.createBody .Signup_button{
-  height:60%;
-  border-radius:50px;
-  background-color:#5136ef;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 20px;
-  margin-left: 5px;
-  margin-right: 10px;
-  
-  
-}
 
 
 .createBody .Login_button{
@@ -88,20 +66,7 @@ html, body, #root, .createBody {
   padding: 0 20px; 
 }
 
-.createBody .Signup_text{
-  color: #ffff;
-  user-select: none;
-  text-decoration: none;
-  font-size: 0.7em;
-  font-family: "Link Sans", "Arial Black";
-  font-weight:450;
-  letter-spacing:0.01em;
-  line-height:1.5;
-  min-width: 100%;
-  
-  
-  
-}
+
 
 
 
@@ -178,15 +143,28 @@ html, body, #root, .createBody {
   border: 2px solid #52528e;
   border-radius: 15px;
   display: self;
+  max-width: 80%;
   align-items: center;
   justify-content: center;
   
 }
 
 .createBody .main_head #link_container #link{
+  max-width: 80%;
   font-weight: 520;
   font-family: "Link Sans", "Arial Black", Arial, sans-serif;
-  font-size: 1em;
+  font-size: 0.85em;
+
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  direction: rtl;
+  
+  
+
+
   display: flex;
   align-self: center;
   text-align: center;

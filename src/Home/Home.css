@@ -52,32 +52,49 @@ html, body, #root, .homeBody {
     margin-left: 20px;
   }
   
-  .homeBody #signup_logo{
-   height: 12.5px;
+#signup_logo{
+    height: 12.5px;
     justify-self: flex-start;
     display: block;
-    padding: 0 8px;
     margin-right: auto;
     filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(222deg) brightness(99%) contrast(102%);
   
   }
   
   
-  .homeBody .Signup_button{
-    height:60%;
+.Signup_button{
+    height:40px;
+    padding: 0 15px;
     border-radius:50px;
     background-color:#5136ef;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 20px;
-    margin-left: 5px;
-    margin-right: 10px;
+    flex-direction: row;
+    border: none;
+    
     
     
   }
   
   
+  
+  
+.Signup_text{
+    color: #ffff;
+    user-select: none;
+    text-decoration: none;
+    margin:8px;
+    font-size: 0.7em;
+    font-family: "Link Sans", "Arial Black";
+    font-weight:450;
+    letter-spacing:0.01em;
+    line-height:1.5;
+    
+    
+    
+  }
+
   .homeBody .Login_button{
     user-select: none;
     height:70%;
@@ -88,21 +105,6 @@ html, body, #root, .homeBody {
     align-items: center;
     /*padding: 0 20px;*/
     padding: 0 20px; 
-  }
-  
-  .homeBody .Signup_text{
-    color: #ffff;
-    user-select: none;
-    text-decoration: none;
-    font-size: 0.7em;
-    font-family: "Link Sans", "Arial Black";
-    font-weight:450;
-    letter-spacing:0.01em;
-    line-height:1.5;
-    min-width: 100%;
-    
-    
-    
   }
   
   

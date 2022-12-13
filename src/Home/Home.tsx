@@ -90,9 +90,8 @@ function App() {
     
     
 
-    <body className="homeBody">
         
-    <div className="elements">
+    <div className="homeBody">
 
 
       <div className="navbar">
@@ -132,7 +131,6 @@ function App() {
     </div>
   
 
-</body>
 
 
 

@@ -39,6 +39,9 @@ function App() {
 
   const [qrCodeImage, setQrCodeImage] = useState("");
   const [qrCodeBg, setQrCodeBg] = useState("transparent");
+  const [copyButtonColour, setCopyButtonColour] = useState("#4d90fb");
+  const [copyButtonText, setCopyButtonText] = useState("Copy");
+
 
   let navigate = useNavigate();
   let location = useLocation();
@@ -141,16 +144,20 @@ function App() {
   });
 
   function copyToClipboard(){
+    //alert("Link copied to clipboard")
+    console.log("Link copied to clipboard")
+    setCopyButtonColour("#38c15e")
+    setCopyButtonText("Copied")
     navigator.clipboard.writeText(shortenedLink);
+    
   }
 
   
 
 
   return(
-  <body className="createBody">
         
-  <div className="elements">
+  <div className="createBody">
 
 
     <div className="navbar">
@@ -166,7 +173,8 @@ function App() {
     <div className="main_head">
       <p id="main_title" style={{color:"#071160"}}>Your shortened link :</p>
       <QRCodeCanvas id="qr_code_image"value={shortenedLink} style={{width:'45%', height:'45%'}} bgColor={qrCodeBg} onClick={saveQrCode}/>
-      <p id="main_title" style={{color:"#071160"}} onClick={copyToClipboard}>{shortenedLink}</p>
+      <div id="link_container" style={{color:"#071160"}}><p id="link">{shortenedLink}</p><button id="copy_button" type="button" style={{backgroundColor:copyButtonColour}} onClick={copyToClipboard}>{copyButtonText}</button></div>
+      <button id="button" type="button" onClick={()=>navigate("/")}>New link</button>
 
       
     </div>
@@ -177,10 +185,7 @@ function App() {
 
 
 
-  </div>
-
-
-</body>);
+  </div>);
 }
 
 export default App;

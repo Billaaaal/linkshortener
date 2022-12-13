@@ -1,32 +1,30 @@
-.createBody{
-    max-width: 800px;
-    background: -webkit-linear-gradient(185deg, rgb(251, 241, 231) 16%, rgb(251, 250, 255) 44%, rgb(221, 217, 240) 99%, rgb(253, 252, 255) 100%);
-    background: -o-linear-gradient(185deg, rgb(251, 241, 231) 16%, rgb(251, 250, 255) 44%, rgb(221, 217, 240) 99%, rgb(253, 252, 255) 100%);
-    background: -ms-linear-gradient(185deg, rgb(251, 241, 231) 16%, rgb(251, 250, 255) 44%, rgb(221, 217, 240) 99%, rgb(253, 252, 255) 100%);
-    background: -moz-linear-gradient(185deg, rgb(251, 241, 231) 16%, rgb(251, 250, 255) 44%, rgb(221, 217, 240) 99%, rgb(253, 252, 255) 100%);
-    background: linear-gradient(265deg, rgb(251, 241, 231) 16%, rgb(251, 250, 255) 44%, rgb(221, 217, 240) 99%, rgb(253, 252, 255) 100%);
-        /* padding-bottom:8px;*/
-    height:100%;
-    min-height: 800px;
-  
-  }
-  
-  .elements{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: -webkit-linear-gradient(185deg, rgb(251, 241, 231) 16%, rgb(251, 250, 255) 44%, rgb(221, 217, 240) 99%, rgb(253, 252, 255) 100%);
+html, body, #root, .homeBody {
+  height: 100%;
+  background: -webkit-linear-gradient(185deg, rgb(251, 241, 231) 16%, rgb(251, 250, 255) 44%, rgb(221, 217, 240) 99%, rgb(253, 252, 255) 100%);
+  background: -o-linear-gradient(185deg, rgb(251, 241, 231) 16%, rgb(251, 250, 255) 44%, rgb(221, 217, 240) 99%, rgb(253, 252, 255) 100%);
+  background: -ms-linear-gradient(185deg, rgb(251, 241, 231) 16%, rgb(251, 250, 255) 44%, rgb(221, 217, 240) 99%, rgb(253, 252, 255) 100%);
+  background: -moz-linear-gradient(185deg, rgb(251, 241, 231) 16%, rgb(251, 250, 255) 44%, rgb(221, 217, 240) 99%, rgb(253, 252, 255) 100%);
+  background: linear-gradient(265deg, rgb(251, 241, 231) 16%, rgb(251, 250, 255) 44%, rgb(221, 217, 240) 99%, rgb(253, 252, 255) 100%);
+  background: -webkit-linear-gradient(185deg, rgb(251, 241, 231) 16%, rgb(251, 250, 255) 44%, rgb(221, 217, 240) 99%, rgb(253, 252, 255) 100%);
   background: -o-linear-gradient(185deg, rgb(251, 241, 231) 16%, rgb(251, 250, 255) 44%, rgb(221, 217, 240) 99%, rgb(253, 252, 255) 100%);
   background: -ms-linear-gradient(185deg, rgb(251, 241, 231) 16%, rgb(251, 250, 255) 44%, rgb(221, 217, 240) 99%, rgb(253, 252, 255) 100%);
   background: -moz-linear-gradient(185deg, rgb(251, 241, 231) 16%, rgb(251, 250, 255) 44%, rgb(221, 217, 240) 99%, rgb(253, 252, 255) 100%);
   background: linear-gradient(265deg, rgb(251, 241, 231) 16%, rgb(251, 250, 255) 44%, rgb(221, 217, 240) 99%, rgb(253, 252, 255) 100%);
   
-  
+}
+.homeBody{
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+    
   }
   
   
   
-  .navbar{
+  
+  
+  .homeBody .navbar{
     /*position: sticky;*/
     width: 92.5%;
     height: 70px;
@@ -45,7 +43,7 @@
   
   
   
-  #logo{
+  .homeBody #logo{
     height: 60%;
     max-width:50px;
     justify-self: flex-start;
@@ -54,7 +52,7 @@
     margin-left: 20px;
   }
   
-  #signup_logo{
+  .homeBody #signup_logo{
    height: 12.5px;
     justify-self: flex-start;
     display: block;
@@ -65,7 +63,7 @@
   }
   
   
-  .Signup_button{
+  .homeBody .Signup_button{
     height:60%;
     border-radius:50px;
     background-color:#5136ef;
@@ -80,7 +78,7 @@
   }
   
   
-  .Login_button{
+  .homeBody .Login_button{
     user-select: none;
     height:70%;
     /*background-color: #eff0ec;*/
@@ -92,7 +90,7 @@
     padding: 0 20px; 
   }
   
-  .Signup_text{
+  .homeBody .Signup_text{
     color: #ffff;
     user-select: none;
     text-decoration: none;
@@ -101,6 +99,7 @@
     font-weight:450;
     letter-spacing:0.01em;
     line-height:1.5;
+    min-width: 100%;
     
     
     
@@ -108,7 +107,7 @@
   
   
   
-  .Login_text{
+  .homeBody .Login_text{
     color: #1e2330;
     user-select: none;
     text-decoration: none;
@@ -120,13 +119,13 @@
   
   }
   
-  .hamburger{
+  .homeBody .hamburger{
     padding: 0 10px;
     margin-left: 5px;
     margin-right: 20px;
   }
   
-  .main_head{
+  .homeBody .main_head{
     width: 90%;
     max-height: 500px;/* A enlever plus tard*/
     min-height:0px;/* A enlever plus tard*/
@@ -137,18 +136,8 @@
     align-items: center;
   }
   
-  .createBody .main_head{
-    width: 90%;
-    max-height: 500px;/* A enlever plus tard*/
-    min-height:0px;/* A enlever plus tard*/
-    border-radius: 20px;
-    margin-top: 75px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .createBody .elements .main_head #qr_code_image{
+
+  .homeBody .elements .main_head #qr_code_image{
     margin-top: 50px;
   
     
@@ -161,13 +150,13 @@
     font-display:swap;font-family:Link Sans;font-weight:200 900;src:url('https://website.linktr.ee/static/LinkSans-LinkSansVF-5ba82435cfe1454f76404182afdbf4fc.woff2') format("woff2-variations")
   }
   
-  .main_head #main_title{
-    margin-top: 50px;
+  .homeBody .main_head #main_title{
+    margin-top: 0px;
     margin-block-end: 10px;
-    width: 90%;
+    width: 100%;
     font-weight: 720;
     font-family: "Link Sans", "Arial Black", Arial, sans-serif;
-    font-size: 1.5em;
+    font-size: 2em;
     letter-spacing: -0.02em;
     line-height: 1.05;
     text-align: left;
@@ -183,7 +172,7 @@
   
   }
   
-  #paragraph{
+  .homeBody #paragraph{
     width: 100%;
     color: #000000;
     font-family: "Link Sans", "Arial Black", Arial, sans-serif;
@@ -193,14 +182,14 @@
     line-height:1.5;
   }
   
-  .form_elements{
+  .homeBody .form_elements{
     width: 90%;
     margin-top: 10px;
     display: flex;
     flex-direction: column;
   }
   
-  #form_div{
+  .homeBody #form_div{
     width: 100%;
     height: 60px;
     border-radius: 35px;
@@ -210,7 +199,7 @@
   
   }
   
-  #button{
+  .homeBody #button{
     display: flex;
     width: 120px;
     height: 45px;
@@ -232,7 +221,7 @@
   
   }
   
-  #link_text{
+  .homeBody #link_text{
     color: #676b5f;
     width: 110px;
     margin-left: 20px;
@@ -242,7 +231,7 @@
     letter-spacing:0.01em;
   }
   
-  #link_input{
+  .homeBody  #link_input{
     background-color:rgba(255, 255, 255, 0);
     color: #676b5f;
     width: 100%;
@@ -255,10 +244,10 @@
     letter-spacing:0.01em;
   }
   
-  #link_input:focus {
+  .homeBody #link_input:focus {
     outline:none;
   }
-  .img_header{
+  .homeBody .img_header{
     width: 70%;
     margin-top: 60px;
     margin-bottom:60px;

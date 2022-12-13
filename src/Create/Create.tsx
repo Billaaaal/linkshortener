@@ -73,6 +73,8 @@ function App() {
 
   
 
+  
+
 
 
 
@@ -120,7 +122,7 @@ function App() {
 
     canvas?.toBlob(
       function(blob:any) {
-    saveAs(blob, "qr_code.png"+shortenedLink);
+    saveAs(blob, "qr_code.png" +shortenedLink);
     });
 
     setQrCodeBg("transparent")
@@ -137,6 +139,10 @@ function App() {
   set(reference, {
   link:linkToSendToDatabase
   });
+
+  function copyToClipboard(){
+    navigator.clipboard.writeText(shortenedLink);
+  }
 
   
 
@@ -158,9 +164,9 @@ function App() {
     </div> 
 
     <div className="main_head">
-      <span id="main_title" style={{color:"#071160"}}>Your shortened link :</span>
+      <p id="main_title" style={{color:"#071160"}}>Your shortened link :</p>
       <QRCodeCanvas id="qr_code_image"value={shortenedLink} style={{width:'45%', height:'45%'}} bgColor={qrCodeBg} onClick={saveQrCode}/>
-      <span id="main_title" style={{color:"#071160"}}>{shortenedLink}</span>
+      <p id="main_title" style={{color:"#071160"}} onClick={copyToClipboard}>{shortenedLink}</p>
 
       
     </div>

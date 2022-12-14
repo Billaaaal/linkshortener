@@ -109,26 +109,22 @@ function App() {
 
   
 
-  QRCode.toDataURL(shortenedLink)
-  .then(url => {
-    setQrCodeImage(url)
-  })
-  .catch(err => {
-    console.error(err)
-  })
+  
 
   function saveQrCode(){
     setQrCodeBg("#fff")
-    alert("QR code saved to your device")
+    
     let canvas = document.getElementById('qr_code_image') as HTMLCanvasElement;
 
 
     canvas?.toBlob(
       function(blob:any) {
-    saveAs(blob, "qr_code.png" +shortenedLink);
+    saveAs(blob, shortenedLink + "_qr_code.png" );
     });
 
     setQrCodeBg("transparent")
+
+    alert("QR code saved to your device")
 
   }
 
@@ -148,7 +144,13 @@ function App() {
     console.log("Link copied to clipboard")
     setCopyButtonColour("#38c15e")
     setCopyButtonText("Copied")
-    navigator.clipboard.writeText(shortenedLink);
+    
+    setTimeout(function() {
+      setCopyButtonColour("#4d90fb")
+      setCopyButtonText("Copy")
+      navigator.clipboard.writeText(shortenedLink);
+   
+    }, 4000);
     
   }
 
@@ -172,7 +174,7 @@ function App() {
 
     <div className="main_head">
       <p id="main_title" style={{color:"#071160"}}>Your shortened link :</p>
-      <QRCodeCanvas id="qr_code_image"value={shortenedLink} style={{width:'45%', height:'45%'}} bgColor={qrCodeBg} onClick={saveQrCode}/>
+      <QRCodeCanvas id="qr_code_image" value={shortenedLink} size={128} style={{width:'45%', height:'45%', backgroundColor:qrCodeBg}} bgColor={qrCodeBg} onClick={saveQrCode}/>
       <div id="link_container" style={{color:"#071160"}}><p id="link">{"linkshortener.app/"+ idToSendToDatabase}</p><button id="copy_button" type="button" style={{backgroundColor:copyButtonColour}} onClick={copyToClipboard}>{copyButtonText}</button></div>
       <button id="button" type="button" onClick={()=>navigate("/")}>New link</button>
 

@@ -147,7 +147,9 @@ function App() {
     
     setTimeout(function(){
       navigator.clipboard.writeText(shortenedLink)
-    },1000);
+    },1);
+
+    //navigator.clipboard.writeText(shortenedLink)
 
     setTimeout(function() {
       setCopyButtonColour("#4d90fb")

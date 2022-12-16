@@ -169,13 +169,18 @@ function App() {
     setCopyButtonColour("#38c15e")
     setCopyButtonText("Copied")
     
+    setTimeout(function(){
+      navigator.clipboard.writeText(shortenedLink)
+    },1);
+
+    //navigator.clipboard.writeText(shortenedLink)
+
     setTimeout(function() {
       setCopyButtonColour("#4d90fb")
       setCopyButtonText("Copy")
-      navigator.clipboard.writeText(shortenedLink);
+      
    
     }, 4000);
-    
   }
 
   

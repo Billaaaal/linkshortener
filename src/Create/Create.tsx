@@ -168,6 +168,7 @@ function App() {
     console.log("Link copied to clipboard")
     setCopyButtonColour("#38c15e")
     setCopyButtonText("Copied")
+
     
     setTimeout(function(){
       navigator.clipboard.writeText(shortenedLink)
@@ -175,12 +176,13 @@ function App() {
 
     //navigator.clipboard.writeText(shortenedLink)
 
+    
     setTimeout(function() {
       setCopyButtonColour("#4d90fb")
       setCopyButtonText("Copy")
-      
    
     }, 4000);
+    
   }
 
   

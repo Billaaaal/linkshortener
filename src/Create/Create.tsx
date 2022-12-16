@@ -7,7 +7,31 @@ import {getDatabase, ref, set, child, get} from "firebase/database";
 import QRCode from 'qrcode'
 import {QRCodeCanvas, QRCodeSVG} from 'qrcode.react';
 import { saveAs } from 'file-saver';
-
+import {
+  TwitterIcon,
+  EmailShareButton,
+  HatenaShareButton,
+  InstapaperShareButton,
+  LineShareButton,
+  LinkedinShareButton,
+  LivejournalShareButton,
+  MailruShareButton,
+  OKShareButton,
+  PinterestShareButton,
+  PocketShareButton,
+  RedditShareButton,
+  TelegramShareButton,
+  TumblrShareButton,
+  TwitterShareButton,
+  ViberShareButton,
+  VKShareButton,
+  WhatsappShareButton,
+  WorkplaceShareButton,
+  PinterestIcon
+} from "react-share";
+import WhatsappIcon from 'react-share/lib/WhatsappIcon';
+import EmailIcon from 'react-share/lib/EmailIcon';
+import RedditIcon from 'react-share/lib/RedditIcon';
 
 
 
@@ -18,7 +42,7 @@ import { saveAs } from 'file-saver';
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAM6D9YmamUP2KvGydvqnS4UIuvUelC5cQ",
+apiKey: "AIzaSyAM6D9YmamUP2KvGydvqnS4UIuvUelC5cQ",
   authDomain: "linkshortener-3948e.firebaseapp.com",
   projectId: "linkshortener-3948e",
   databaseURL: "https://linkshortener-3948e-default-rtdb.europe-west1.firebasedatabase.app/",
@@ -163,7 +187,7 @@ function App() {
 
 
     <div className="navbar">
-      <img id ="logo" src="https://svgshare.com/i/nc7.svg"/>
+      <img id ="logo" src="https://svgshare.com/i/nc7.svg" onClick={()=>navigate("/")}/>
       <div className="Login_button"><a className="Login_text">Features</a></div>
       <div className="Login_button"><a href="https://www.google.com" className="Login_text">Login</a></div>
       <button className="Signup_button"><img id="signup_logo" src="https://i.ibb.co/5T9GvzB/Nice-Png-my-account-png-5010656.png"/><a className="Signup_text">Sign up</a></button>
@@ -177,9 +201,30 @@ function App() {
       <QRCodeCanvas id="qr_code_image" value={shortenedLink} size={128} style={{width:'45%', height:'45%', backgroundColor:qrCodeBg}} bgColor={qrCodeBg} onClick={saveQrCode}/>
       <div id="link_container" style={{color:"#071160"}}><p id="link">{"linkshortener.app/"+ idToSendToDatabase}</p><button id="copy_button" type="button" style={{backgroundColor:copyButtonColour}} onClick={copyToClipboard}>{copyButtonText}</button></div>
       <button id="button" type="button" onClick={()=>navigate("/")}>New link</button>
+      <p id="main_title" style={{color:"#071160"}}>Share</p>
+      <div id="share_buttons">
 
-      
+        <TwitterShareButton url={shortenedLink}><TwitterIcon className="social_media_share"></TwitterIcon></TwitterShareButton>
+
+        <WhatsappShareButton url={shortenedLink}><WhatsappIcon className="social_media_share"></WhatsappIcon></WhatsappShareButton>
+
+        
+        <EmailShareButton url={shortenedLink}><EmailIcon className="social_media_share"></EmailIcon></EmailShareButton>
+
+
+        <RedditShareButton url={shortenedLink}><RedditIcon className="social_media_share"></RedditIcon></RedditShareButton>
+
+
+        <PinterestShareButton media={shortenedLink} url={shortenedLink}><PinterestIcon className="social_media_share"></PinterestIcon></PinterestShareButton>
+
+
+
+
+      </div>
+
     </div>
+      
+      
 
     
 

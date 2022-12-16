@@ -10,8 +10,10 @@ html, body, #root, .createBody {
   background: -ms-linear-gradient(185deg, rgb(251, 241, 231) 16%, rgb(251, 250, 255) 44%, rgb(221, 217, 240) 99%, rgb(253, 252, 255) 100%);
   background: -moz-linear-gradient(185deg, rgb(251, 241, 231) 16%, rgb(251, 250, 255) 44%, rgb(221, 217, 240) 99%, rgb(253, 252, 255) 100%);
   background: linear-gradient(265deg, rgb(251, 241, 231) 16%, rgb(251, 250, 255) 44%, rgb(221, 217, 240) 99%, rgb(253, 252, 255) 100%);
-  
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
 }
+
 .createBody{
   display: flex;
   flex-direction: column;
@@ -276,4 +278,20 @@ html, body, #root, .createBody {
   margin-bottom:60px;
 }
 
+
+.createBody .main_head #share_buttons{
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.createBody .main_head #share_buttons .social_media_share{
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  display: flex;
+
+}
 
